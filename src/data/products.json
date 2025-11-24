@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "productimage": "P1.png",
+    "productTittle": "Luxury Watch",
+    "productPrice": "1,000,000 ",
+    "productDescription": "นาฬิกาสุดหรู ดีไซน์คลาสสิก ล้ำค่าเหนือกาลเวลา"
+  },
+  {
+    "id": 1,
+    "productimage": "P2.png",
+    "productTittle": "Ancient Tea set",
+    "productPrice": "1,499,999 ",
+    "productDescription": "ชุดน้ำชาโบราณหายาก อายุพันปี เหมาะสำหรับนักสะสม"
+  },
+  {
+    "id": 2,
+    "productimage": "P3.png",
+    "productTittle": "Retro camera",
+    "productPrice": "150,000 ",
+    "productDescription": "กล้องถ่ายภาพวินเทจ สภาพสมบูรณ์ ถ่ายทอดความรู้สึกแบบย้อนยุค"
+  },
+  {
+    "id": 3,
+    "productimage": "P4.png",
+    "productTittle": "Headphone Tier one",
+    "productPrice": "1,500 ",
+    "productDescription": "หูฟังคุณภาพเสียงระดับพรีเมียม สวมใส่สบาย"
+  }
+]

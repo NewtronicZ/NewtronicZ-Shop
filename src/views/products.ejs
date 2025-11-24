@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewtronicZ Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            /* สีพื้นหลัง Navbar */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            /* จัดเรียงโลโก้และ Navbar ในแนวนอน */
+            justify-content: space-between;
+            /* ให้โลโก้และ Navbar แยกกันคนละฝั่ง */
+            align-items: center;
+            /* จัดให้อยู่กึ่งกลางในแนวตั้ง */
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            /* ลบจุดนำหน้าลิสต์ */
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            /* ลบขีดเส้นใต้ลิงก์ */
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #555;
+            /* เปลี่ยนสีเมื่อชี้ */
+            border-radius: 4px;
+        }
+
+        /* --- Main Content (รายการสินค้า) --- */
+        main {
+            padding: 20px;
+            max-width: 820px;
+            margin: 20px auto;
+            /* จัดกึ่งกลางเนื้อหา */
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+
+        .suggest h1,
+        h2 {
+            justify-content: center;
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            /* สร้าง Grid 3 คอลัมน์ (ปรับตามต้องการ) */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            /* ระยะห่างระหว่างบัตรสินค้า */
+            margin-top: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-image {
+            background-color: #eee;
+            height: 150px;
+            line-height: 150px;
+            /* จัดข้อความให้อยู่กลาง (ใช้แทนรูปภาพ) */
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        .product-image :hover{
+            opacity: 0.8;
+        }
+
+        .product-card h3 {
+            margin-top: 5px;
+            color: #333;
+        }
+
+        .product-card button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .product-card button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1px;
+            position: absolute;
+            /* หรือ fixed/absolute ถ้าต้องการให้อยู่ด้านล่างสุดเสมอ */
+            width: 100%;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="products"><img src="../img/Logo.png" alt="NewtronicZ Shop" style="height:30px;"></a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/products">หน้าแรก</a></li>
+                <li><a href="/catalog">สินค้าทั้งหมด</a></li>
+                <li><a href="/contact">ติดต่อเรา</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="suggest">
+        <h2>🔥 สินค้าแนะนำสำหรับเดือนนี้</h2>
+    </div>
+
+    <main class="product-grid">
+        <% products.map((product)=>{ %>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/img/<%=product.productimage%>" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <h3>
+                    <%=product.productTittle%>
+                </h3>
+                <p>ราคา: <%=product.productPrice%>บาท</p>
+                <a href="/products/<%=product.id%>"><button>ดูเพิ่มเติม</button></a>
+            </div>
+            <%})%>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 NewtronicZ Shop Ltd.</p>
+    </footer>
+
+</body>
+
+</html>
